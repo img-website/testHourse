@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        animation: {
+                            'progress': 'progress 3s forwards',
+                            'fixed-nav': 'fixedNav 0.6s',
+                            'fall': 'fall 0.6s',
+                            'diagonalfall': 'diagonalfall 0.6s',
+                            'marquee-h': 'marqueeHorizontal 20s linear infinite',
+                            'shimmer': ' shimmer 1.5s infinite alternate',
+                            'fadeInDown': ' fadeInDown 2s linear infinite'
+                        },
+                        keyframes: {
+                            marqueeHorizontal: {
+                            '0%': { 
+                                transform: 'translateZ(0)',
+                                visibility: 'visible',
+                            },
+                            '100%': { 
+                                transform: 'translate3d(-100%,0,0)'
+                            },
+                            },
+                            fadeInDown: {
+                            '0%': {
+                                transform: 'translateY(0)',
+                            },
+                            '50%': {
+                            transform: 'translateY(-10px)',
+                            },  
+                            '100%': {
+                            transform: 'translateY(0)',
+                            },
+                            },
+                            progress: {
+                            '0%': {
+                                '--progress': '0',
+                            },
+                            '100%': {
+                                '--progress': '1',
+                            }
+                            },
+                            fixedNav: {
+                            '0%': { 
+                                opacity: '0',
+                                transform: 'translateY(-60px)' 
+                            },
+                            '100%': { 
+                                opacity: '1',
+                                transform: 'translateY(0px)' 
+                            },
+                            },
+                            fall: {
+                            '0%': { 
+                                opacity: '0',
+                                transform: 'translateY(0)' 
+                            },
+                            '10%': { 
+                                opacity: '1'
+                            },
+                            '100%': { 
+                                opacity: '0.5',
+                                transform: 'translateY(100vh)' 
+                            },
+                            },
+                            diagonalfall: {
+                            '0%': { 
+                                opacity: '0',
+                                transform: 'translate(0, 0)' 
+                            },
+                            '10%': { 
+                                opacity: '1'
+                            },
+                            '100%': { 
+                                opacity: '0.25',
+                                transform: 'translate(10vw, 100vh)' 
+                            },
+                            },shimmer: {
+                            '0%': {
+                                opacity: '0',
+                            },
+                            '100%': {
+                                opacity: '0.7',
+                            }
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="overflow-hidden">
+            <div class="w-max flex *:flex *:items-center *:duration-300 *:animate-marquee-h">
+                <div class="w-[calc(100vw-1px)]">
+                    <img class="-mx-[1px]" src="./grassBg.webp" alt="taxi-drive-next">
+                    <img class="-mx-[1px]" src="./grassBg.webp" alt="taxi-drive-next">
+                </div>
+                <div class="w-[calc(100vw+1px)]">
+                    <img class="-mx-[1px]" src="./grassBg.webp" alt="taxi-drive-next">
+                    <img class="-mx-[1px]" src="./grassBg.webp" alt="taxi-drive-next">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
